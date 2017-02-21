@@ -49,6 +49,15 @@ class ServerSolution implements AccountServer {
 		return accountMap.get(name);
 	}
 
+	private boolean _newAccountFactory(String type, String name, float balance)
+		throws IllegalArgumentException {
+		
+		if (accountMap.get(name) != null) return false;
+		
+		Account acc;
+		if ("Checking".equals(type)) {
+			acc = new Checking(name, balance);
+
 	public List<Account> getAllAccounts() {
 		return new ArrayList<Account>(accountMap.values());
 	}
