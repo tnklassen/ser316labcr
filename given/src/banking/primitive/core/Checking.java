@@ -4,6 +4,14 @@ public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;
 	private int numWithdraws = 0;
+
+	/**
+	  Method: getType()
+	  Returns: type "Checking"
+
+	  Description: return "Checking" as account type to appropriate method
+	*/
+	public String getType() { return "Checking"; }
 	
 	private Checking(String name) {
 		super(name);
@@ -54,9 +62,14 @@ public class Checking extends Account {
 		}
 		return false;
 	}
-
-	public String getType() { return "Checking"; }
 	
+	/**
+	  Method: toString()
+	  Inputs: getName(), getBalance()
+	  Returns: String
+
+	  Description: returns name of account and corresponding balance
+	*/
 	public String toString() {
 		return "Checking: " + getName() + ": " + getBalance();
 	}

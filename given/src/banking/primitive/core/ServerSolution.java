@@ -45,40 +45,33 @@ class ServerSolution implements AccountServer {
 		}
 	}
 	
+	/**
+	  Method: getAccount()
+	  Inputs: String name
+	  Returns: name of account
+
+	  Description: name of account used to identify name to be returned in map
+	*/
 	public Account getAccount(String name) {
 		return accountMap.get(name);
 	}
 
-	private boolean _newAccountFactory(String type, String name, float balance)
-		throws IllegalArgumentException {
-		
-		if (accountMap.get(name) != null) return false;
-		
-		Account acc;
-		if ("Checking".equals(type)) {
-			acc = new Checking(name, balance);
-		} else if ("Savings".equals(type)){
-			acc = new Savings(name, balance);
-			
-		} else{
-			throw new IllegalArgumentException("Bad account type:" + type);
-		}
-		try{
-			accountMap.put(acc.getName(), acc);
-		} catch (Exception exc){
-			return false;
-		}
-		return true;
-	}
+	/**
+	  Method: getAllAccounts()
+	  Returns: list of accounts
 
-	
-	
-	
-	
+	  Description: all accounts within system will be listed
+	*/
 	public List<Account> getAllAccounts() {
 		return new ArrayList<Account>(accountMap.values());
 	}
 
+	/**
+	  Method: getActiveAccounts()
+	  Returns: list of user information
+
+	  Description: all accounts with state not currently set to "Closed" will be listed
+	*/
 	public List<Account> getActiveAccounts() {
 		List<Account> result = new ArrayList<Account>();
 
@@ -90,15 +83,28 @@ class ServerSolution implements AccountServer {
 		return result;
 	}
 	
+	/**
+	  Method: newAccount
+	  Inputs: String type, String name, float balance
+	  Returns: new user account
 
+	  Description: returns a new user account with a type, name, and balance
+	*/
 	public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
 		if (balance < 0.0f) throw new IllegalArgumentException("New account may not be started with a negative balance");
 		
-		return newAccountFactory(type, name, balance);
+		return _newAccountFactory(type, name, balance);
 	}
 	
+	/**
+	  Method: closeAccount()
+	  Inputs: String name
+	  Returns: boolean true or false
+
+	  Description: sets state of user account to "Closed" if account is null
+	*/
 	public boolean closeAccount(String name) {
 		Account acc = accountMap.get(name);
 		if (acc == null) {
@@ -108,8 +114,11 @@ class ServerSolution implements AccountServer {
 		return true;
 	}
 
-	
-	
+	/**
+	  Method: saveAccounts()
+
+	  Description: will save all accounts to accountMap
+	*/
 	public void saveAccounts() throws IOException {
 		ObjectOutputStream out = null; 
 		try {
@@ -133,7 +142,14 @@ class ServerSolution implements AccountServer {
 		}
 	}
 	
-	private boolean newAccountFactory(String type, String name, float balance)
+	/**
+	  Method:_newAccountFactory()
+	  Inputs: String type, String name, float balance
+	  Returns: boolean true or false
+
+	  Description: creates new account for user based on user-chosen preferences.
+	*/
+	private boolean _newAccountFactory(String type, String name, float balance)
 			throws IllegalArgumentException {
 			
 			if (accountMap.get(name) != null) return false;
