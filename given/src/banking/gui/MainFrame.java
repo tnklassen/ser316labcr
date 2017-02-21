@@ -11,7 +11,14 @@ import java.awt.Container;
 import java.awt.event.*;
 import javax.swing.*;
 
+/*
+ * @author Brandon and Taylor
+ * @Date 2/20/2016
+ */
 @SuppressWarnings("serial")
+/*
+ * Creates the main GUI
+ */
 class MainFrame extends JFrame {
 	AccountServer	myServer;
 	Properties		props;
@@ -26,7 +33,10 @@ class MainFrame extends JFrame {
 	JButton			newAccountButton;
 	JButton			displayAccountsButton;
 	JButton			displayODAccountsButton;
-
+/*
+ * Input: File name
+ * returns GUI
+ */
 	public MainFrame(String propertyFile) throws IOException {
 
 		//** initialize myServer
@@ -46,7 +56,9 @@ class MainFrame extends JFrame {
 		constructForm();
 	}
 
-	
+	/*
+	 * GUI
+	 */
 	private void constructForm() {
 		//*** Make these read from properties
 		typeLabel		= new JLabel(props.getProperty("TypeLabel"));

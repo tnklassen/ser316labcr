@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 /**
  * main method for running the program.
  * @author kevinagary
- *
+ * Date:2/20/2017
  */
 final class Main {
 	/**

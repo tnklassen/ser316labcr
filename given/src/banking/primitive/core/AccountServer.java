@@ -1,8 +1,19 @@
 package banking.primitive.core;
 
+/*
+ * Authors: Taylor and Brandon
+ * Date: 2/20/2017
+ * 
+ * Description: Creates, removes, and save account info
+ */
+
 import java.io.IOException;
 import java.util.List;
 
+
+/*
+ * Description: Account Server gets account info and can save it, create new or delete.
+ */
 public interface AccountServer {
 
 	/**
