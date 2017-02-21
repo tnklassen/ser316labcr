@@ -8,6 +8,21 @@ import java.io.*;
 
 import banking.primitive.core.Account.STATE;
 
+
+/*
+ * Authors: Taylor and Brandon 
+ * Date: 2/20/2017
+ * 
+ * Description: ServerSolution
+ */
+
+
+
+
+/*
+ * Description: allows for different kinds of accounts to be called
+ */
+
 class ServerSolution implements AccountServer {
 
 	static String fileName = "accounts.ser";

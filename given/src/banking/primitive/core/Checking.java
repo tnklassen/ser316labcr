@@ -1,5 +1,16 @@
 package banking.primitive.core;
+/*
+ * Authors: Taylor and Brandon 
+ * Date: 2/20/2017
+ * 
+ * Description: Checking account
+ */
 
+
+
+/*
+ * Description: Allows the user to deposit or withdraw from a checking account type.
+ */
 public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;
