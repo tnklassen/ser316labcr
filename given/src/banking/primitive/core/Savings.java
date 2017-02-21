@@ -21,6 +21,7 @@ public class Savings extends Account {
 			if (balance >= 0.0f) {
 				setState(STATE.OPEN);
 			}
+			return true; // <- Fixed 2/20/2017
 		}
 		return false;
 	}
@@ -36,15 +37,20 @@ public class Savings extends Account {
 			if (numWithdraws > 3)
 				balance = balance - 1.0f;
 			// KG BVA: should be < 0
+
 			if (balance <= 0.0f) {
 				setState(STATE.OVERDRAWN);
+
+			if (balance < 0.0f) { // <- Fixed 2/20/2017
+				setState(State.OVERDRAWN);
+
 			}
 			return true;
 		}
 		return false;
 	}
 	
-	public String getType() { return "Checking"; }
+	public String getType() { return "Savings"; } // <-- Fixed 2/20/2017
 
 	public String toString() {
 		return "Savings: " + getName() + ": " + getBalance();

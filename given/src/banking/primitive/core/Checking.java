@@ -22,7 +22,11 @@ public class Checking extends Account {
 	 * @param float is the deposit amount
 	 */
 	public boolean deposit(float amount) {
+
 		if (getState() != STATE.CLOSED && amount > 0.0f) {
+
+		if (getState() != State.CLOSED && amount >= 0.0f) { // <-- Fixed 2/20/2017
+
 			balance = balance + amount;
 			if (balance >= 0.0f) {
 				setState(STATE.OPEN);
