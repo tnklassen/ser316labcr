@@ -18,6 +18,14 @@ public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
 	private int _numWithdraws = 0;
 
+	/**
+	  Method: getType()
+	  Returns: type "Savings"
+
+	  Description: return "Savings" as account type to appropriate method
+	*/
+	public String getType() { return "Savings"; } // <-- Fixed 2/20/2017
+	
 	public Savings(String name) {
 		super(name);
 	}
@@ -64,8 +72,14 @@ public class Savings extends Account {
 		}
 		return false;
 	}
-	
 
+	/**
+	  Method: toString()
+	  Inputs: getName(), getBalance()
+	  Returns: string
+
+	  Description: return name of account and corresponding balance
+	*/
 	public String toString() {
 		return "Savings: " + getName() + ": " + getBalance();
 	}

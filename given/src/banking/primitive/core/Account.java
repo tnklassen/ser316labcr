@@ -81,6 +81,13 @@ public abstract class Account implements java.io.Serializable {
      * @return either "Checking" or "Savings"
      */
 
+    /**
+    Method: toString()
+    Inputs: name, balance
+    Returns: string
+
+    Description: Returns account name, balance, and state
+    */
     public String toString() {
         return "Account " + name + " has $" + balance + "and is " + getState()
                 + "\n";
