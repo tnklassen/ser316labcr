@@ -44,8 +44,9 @@ public class Checking extends Account {
 			if (getState() == STATE.OPEN || (getState() == STATE.OVERDRAWN && balance > -100.0f)) {
 				balance = balance - amount;
 				numWithdraws++;
-				if (numWithdraws > 10)
+				if (numWithdraws > 10){
 					balance = balance - 2.0f;
+				}
 				if (balance < 0.0f) {
 					setState(STATE.OVERDRAWN);
 				}
