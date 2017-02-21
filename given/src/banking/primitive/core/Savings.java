@@ -12,6 +12,8 @@ public class Savings extends Account {
 		super(name, balance);
 	}
 
+	public String getType() { return "Savings"; } // <-- Fixed 2/20/2017
+	
 	/**
 	 * A deposit comes with a fee of 50 cents per deposit
 	 */
@@ -49,7 +51,6 @@ public class Savings extends Account {
 		return false;
 	}
 	
-	public String getType() { return "Savings"; } // <-- Fixed 2/20/2017
 
 	public String toString() {
 		return "Savings: " + getName() + ": " + getBalance();
