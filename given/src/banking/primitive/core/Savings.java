@@ -1,5 +1,19 @@
 package banking.primitive.core;
 
+
+/*
+ * Authors: Taylor and Brandon 
+ * Date: 2/20/2017
+ * 
+ * Description: Savings account
+ */
+
+
+
+/*
+ * Description: Allows the user to deposit or withdraw from a Savings account type.
+ */
+
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
 	private int _numWithdraws = 0;
@@ -20,6 +34,8 @@ public class Savings extends Account {
 		super(name, balance);
 	}
 
+	public String getType() { return "Savings"; } // <-- Fixed 2/20/2017
+	
 	/**
 	 * A deposit comes with a fee of 50 cents per deposit
 	 */

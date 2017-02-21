@@ -1,5 +1,16 @@
 package banking.primitive.core;
+/*
+ * Authors: Taylor and Brandon
+ * Date: 2/20/2017
+ * 
+ * Description: Creation of the Account parent to Savings and Checking
+ */
 
+
+
+/*
+ * Description: Implementation of account class
+ */
 public abstract class Account implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 

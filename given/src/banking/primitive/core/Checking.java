@@ -1,5 +1,16 @@
 package banking.primitive.core;
+/*
+ * Authors: Taylor and Brandon 
+ * Date: 2/20/2017
+ * 
+ * Description: Checking account
+ */
 
+
+
+/*
+ * Description: Allows the user to deposit or withdraw from a checking account type.
+ */
 public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;
@@ -24,6 +35,8 @@ public class Checking extends Account {
 	public Checking(String name, float balance) {
 		super(name, balance);
 	}
+	
+	public String getType() { return "Checking"; }
 
 	/**
 	 * A deposit may be made unless the Checking account is closed
@@ -52,8 +65,9 @@ public class Checking extends Account {
 			if (getState() == STATE.OPEN || (getState() == STATE.OVERDRAWN && balance > -100.0f)) {
 				balance = balance - amount;
 				numWithdraws++;
-				if (numWithdraws > 10)
+				if (numWithdraws > 10){
 					balance = balance - 2.0f;
+				}
 				if (balance < 0.0f) {
 					setState(STATE.OVERDRAWN);
 				}
@@ -62,6 +76,7 @@ public class Checking extends Account {
 		}
 		return false;
 	}
+
 	
 	/**
 	  Method: toString()
