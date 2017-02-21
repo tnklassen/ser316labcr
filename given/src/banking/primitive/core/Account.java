@@ -37,11 +37,11 @@ public abstract class Account implements java.io.Serializable {
     
     public abstract String getType();
 
-    protected final State getState() {
+    protected final STATE getState() {
         return state;
     }
 
-    protected final void setState(State s) {
+    protected final void setState(STATE s) {
         state = s;
     }
 
@@ -69,17 +69,6 @@ public abstract class Account implements java.io.Serializable {
     /**
      * @return either "Checking" or "Savings"
      */
-
-    public abstract String getType();
-
-    protected final STATE getState() {
-        return state;
-    }
-
-    protected final void setState(STATE s) {
-        state = s;
-    }
-
 
     public String toString() {
         return "Account " + name + " has $" + balance + "and is " + getState()

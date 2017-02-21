@@ -57,7 +57,24 @@ class ServerSolution implements AccountServer {
 		Account acc;
 		if ("Checking".equals(type)) {
 			acc = new Checking(name, balance);
+		} else if ("Savings".equals(type)){
+			acc = new Savings(name, balance);
+			
+		} else{
+			throw new IllegalArgumentException("Bad account type:" + type);
+		}
+		try{
+			accountMap.put(acc.getName(), acc);
+		} catch (Exception exc){
+			return false;
+		}
+		return true;
+	}
 
+	
+	
+	
+	
 	public List<Account> getAllAccounts() {
 		return new ArrayList<Account>(accountMap.values());
 	}
